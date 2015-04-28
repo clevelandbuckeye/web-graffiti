@@ -1,0 +1,75 @@
+﻿<Page
+    x:Class="App1_webview_browser_bstump.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1_webview_browser_bstump"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" x:Name="rootMainPage" x:FieldModifier="public" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <UserControl x:Key="MovableWebViewControl1">
+            <Canvas>
+                <Grid>
+                    <WebView></WebView>
+                    <Rectangle Height="40" Width="40" Fill="Yellow"></Rectangle>
+                </Grid>
+            </Canvas>
+        </UserControl>
+    </Page.Resources>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="524,182,0,0">
+            <CheckBox Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" >move things around</CheckBox>
+            <CheckBox Checked="CheckBox_Checked2" Unchecked="CheckBox_Unchecked2" >sendoverherethere</CheckBox>
+            <CheckBox Checked="CheckBox_Checked3" Unchecked="CheckBox_Unchecked3" >far away 3</CheckBox>
+        </StackPanel>
+        <Grid x:Name="GridHashtagShape" Loaded="GridHashtagShape_Loaded">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid DataContext="{Binding ElementName=TheCanvasHa}" x:Name="Grid0101not11" Grid.Row="{Binding BindingMiddleRow}" Grid.Column="{Binding BindingMiddleColumn}">
+                <Rectangle Fill="Orange" Height="60" Width="60"></Rectangle>
+            </Grid>
+        </Grid>
+        <Canvas x:Name="TheCanvasHa">
+            <WebView Loaded="AWebBrowserwebview1_Loaded" x:Name="AWebBrowserwebview1" Source="http://www.bing.com" Width="452" Height="271"
+                    NavigationStarting="AWebBrowserwebview1_NavigationStarting1" Canvas.Left="40" Canvas.Top="40" />
+            <!--<Grid x:Name="ASillyGridConShade"  ManipulationStarting="TagGrid_ManipulationStarting" 
+                     ManipulationMode="All" HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"                     
+                  ManipulationStarted="TagGrid_ManipulationStarted"  
+                     ManipulationCompleted="TagGrid_ManipulationCompleted"
+                     ManipulationDelta="TagGrid_ManipulationDelta" IsHitTestVisible="False"
+                   Background="Green">
+            </Grid>-->
+            <Rectangle x:Name="ARectangleBrowser" Fill="Green" Width="50" Height="50" Margin="4" Canvas.Left="0"
+                     ManipulationStarting="TagGrid_ManipulationStarting" 
+                     ManipulationMode="All" 
+                     ManipulationStarted="TagGrid_ManipulationStarted"  
+                     ManipulationCompleted="TagGrid_ManipulationCompleted"
+                  ManipulationDelta="TagGrid_ManipulationDelta" ></Rectangle>
+            <WebView x:Name="AWebBrowserwebview2" Source="http://www.bing.com" Width="480" Height="700" Margin="40" Canvas.Left="600" NavigationStarting="AWebBrowserwebview2_NavigationStarting2"></WebView>
+
+            <Rectangle x:Name="ARectangleBrowser2" Fill="Blue" Width="50" Height="50" Margin="4" Canvas.Left="600"
+                     ManipulationStarting="TagGrid_ManipulationStarting2" 
+                     ManipulationMode="All" 
+                     ManipulationStarted="TagGrid_ManipulationStarted2"  
+                     ManipulationCompleted="TagGrid_ManipulationCompleted2"
+                  ManipulationDelta="TagGrid_ManipulationDelta2" ></Rectangle>
+
+            <WebView x:Name="AWebBrowserwebview23" Source="http://www.bing.com" Width="480" Height="700" Margin="40" Canvas.Left="1180"></WebView>
+            <Rectangle x:Name="ARectangleBrowser23" Fill="Yellow" Width="50" Height="50" Margin="4" Canvas.Left="1180"
+                     ManipulationStarting="TagGrid_ManipulationStarting23" 
+                     ManipulationMode="All" 
+                     ManipulationStarted="TagGrid_ManipulationStarted23"  
+                     ManipulationCompleted="TagGrid_ManipulationCompleted23"
+                  ManipulationDelta="TagGrid_ManipulationDelta23" ></Rectangle>
+        </Canvas>
+    </Grid>
+</Page>
