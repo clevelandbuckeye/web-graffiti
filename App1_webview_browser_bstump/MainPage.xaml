@@ -17,11 +17,7 @@
         </UserControl>
     </Page.Resources>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="524,182,0,0">
-            <CheckBox Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" >move things around</CheckBox>
-            <CheckBox Checked="CheckBox_Checked2" Unchecked="CheckBox_Unchecked2" >sendoverherethere</CheckBox>
-            <CheckBox Checked="CheckBox_Checked3" Unchecked="CheckBox_Unchecked3" >far away 3</CheckBox>
-        </StackPanel>
+
         <Grid x:Name="GridHashtagShape" Loaded="GridHashtagShape_Loaded">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -37,6 +33,11 @@
                 <Rectangle Fill="Orange" Height="60" Width="60"></Rectangle>
             </Grid>
         </Grid>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="41,353,0,0" Background="DarkGray" Height="95" Width="292">
+            <CheckBox Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" >move things around</CheckBox>
+            <CheckBox Checked="CheckBox_Checked2" Unchecked="CheckBox_Unchecked2" >sendoverherethere</CheckBox>
+            <CheckBox Checked="CheckBox_Checked3" Unchecked="CheckBox_Unchecked3" >far away 3</CheckBox>
+        </StackPanel>
         <Canvas x:Name="TheCanvasHa">
             <WebView Loaded="AWebBrowserwebview1_Loaded" x:Name="AWebBrowserwebview1" Source="http://www.bing.com" Width="452" Height="271"
                     NavigationStarting="AWebBrowserwebview1_NavigationStarting1" Canvas.Left="40" Canvas.Top="40" />
